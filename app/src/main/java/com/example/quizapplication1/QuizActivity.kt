@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.content.Intent
 import android.graphics.Typeface
+import android.media.MediaPlayer
 import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.toColorInt
 
 
  class QuizActivity : AppCompatActivity(), View.OnClickListener  {
+    private var mediaPlayer: MediaPlayer? = null
     private var mCurrentPosition: Int = 1
     private var mQuestionList: ArrayList<Question>?= null
     private var mSelectedOptionPosition: Int = 0
@@ -39,8 +41,23 @@ import androidx.core.graphics.toColorInt
         getQuestions()
         setQuestionList()
         defaultOptionsView()
-
+        mediaPlayer = MediaPlayer.create(this,R.raw.background_music)
+        mediaPlayer?.isLooping= true
+        mediaPlayer?.start()
     }
+     override fun onPause() {
+         super.onPause()
+         mediaPlayer?.pause()
+     }
+     override fun onResume() {
+         super.onResume()
+         mediaPlayer?.start()
+     }
+     override fun onDestroy() {
+         super.onDestroy()
+         mediaPlayer?.release()
+         mediaPlayer = null
+     }
 
     fun setUpView() {
         progressBar = findViewById(R.id.progressBar)
