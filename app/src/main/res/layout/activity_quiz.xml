@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".QuizActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="9dp">
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:gravity="center"
+            android:text="@string/Zu_welcher_katzenrasse_geh_rt_diese_katze"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/tv_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/cat_image"
+            android:src="@drawable/ic_siamese" />
+
+        <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:layout_marginTop="18dp"
+           android:orientation="horizontal">
+           <ProgressBar
+               android:id="@+id/progressBar"
+               android:layout_width="0dp"
+               android:layout_weight="2"
+               android:layout_height="wrap_content"
+               android:max="5"
+               android:minHeight="45dp"
+               android:progress="1"
+               style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+               />
+           <TextView
+               android:id="@+id/tv_progress"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:padding="12dp"
+               android:textSize="15sp"
+               android:text="@string/_1_5"
+               />
+       </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_option_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="12dp"
+            android:padding="16dp"
+            android:background="@drawable/default_option_bg"
+            android:textSize="20sp"
+            android:textColor="#000080"
+            tools:text="@string/meow"/>
+        <TextView
+            android:id="@+id/tv_option_two"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/default_option_bg"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="20sp"
+            android:textColor="#000080"
+            tools:text="@string/meow"/>
+        <TextView
+            android:id="@+id/tv_option_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="@drawable/default_option_bg"
+            android:textSize="20sp"
+            android:textColor="#000080"
+            tools:text="@string/meow"/>
+        <TextView
+            android:id="@+id/tv_option_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:background="@drawable/default_option_bg"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:textColor="#000080"
+            tools:text="@string/meow"/>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:textSize="22sp"
+            android:text="@string/abschicken"
+            android:textStyle="bold"
+            android:background="@color/purple_500" />
+
+    </LinearLayout>
+  </ScrollView>
